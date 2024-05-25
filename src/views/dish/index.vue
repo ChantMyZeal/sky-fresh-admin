@@ -101,6 +101,8 @@
             <el-button type="text"
                        size="small"
                        class="blueBug"
+                       :class="{'disabled-text': scope.row.status != '0'}"
+                       :disabled="scope.row.status != '0'"
                        @click="addDishtype(scope.row.id)">
               修改
             </el-button>
@@ -374,5 +376,8 @@ export default class extends Vue {
       }
     }
   }
+}
+.disabled-text {
+  color: #bac0cd !important;
 }
 </style>
